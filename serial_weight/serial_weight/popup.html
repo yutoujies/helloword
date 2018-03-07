@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>PMToy</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="./res/vendor/js/require.js" data-main="./res/main.js"></script>
+    <link rel="stylesheet" href="./res/vendor/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./res/style.css"/>
+  </head>
+
+  <body>
+	<nav class="navbar navbar-light bg-faded">
+		<select class="custom-select" name="portNumber"></select>
+		<select class="custom-select" name="baudRate">
+			<option value="2400">2400</option>
+			<option value="4800">4800</option>
+			<option value="7200">7200</option>
+			<option value="9600">9600</option>
+			<option value="14400">14400</option>
+		</select>
+		<input class="btn btn-success" type="button" name="connect" value="连接" />
+		<input class="btn btn-warning" type="button" name="disconnect" value="断开连接" />
+	</nav>
+	<table style="width: 800px;" class="table table-bordered">
+		<colgroup>
+			<col style="width: 25%">
+			<col style="width: 25%">
+			<col style="width: 25%">
+			<col style="width: 25%">
+		</colgroup>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">分拣类型:</td>
+			<td>
+				<select name="sortingType" class="custom-select" style="width:95%;">
+					<option value="DIRECTSORTING">直接分拣</option>
+					<option value="LATERSORTING">稍后分拣</option>
+				</select>
+			</td>
+			<td align="right" style="vertical-align: middle!important;">允许的重量差异(g)</td>
+			<td>
+				<input name="allowableErrorWeight" class="form-control" type="text">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">追踪号(尾程追踪号):</td>
+			<td colspan="3">
+				<input id="frtTrackNumber" name="frtTrackNumber" class="form-control" type="text" style="height: 50px; width: 95%; font-size: 40px">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">重量:</td>
+			<td colspan="3">
+				<input name="rWeight" class="form-control" type="text" style="height: 50px; width: 95%; font-size: 40px"
+					disabled="disabled">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">预报重量(g):</td>
+			<td>
+				<input name="weight" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+			<td align="right" style="vertical-align: middle!important;">差异重量(g):</td>
+			<td>
+				<input name="differentialWeight" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">客户 :</td>
+			<td>
+				<input name="customerName" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+			<td align="right" style="vertical-align: middle!important;">产品 :</td>
+			<td>
+				<input name="productName" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" style="vertical-align: middle!important;">国家 :</td>
+			<td>
+				<input name="consigneeCName" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+			<td align="right" style="vertical-align: middle!important;">订单时间 :</td>
+			<td>
+				<input name="orderTime" class="form-control" type="text"
+					disabled="disabled">
+			</td>
+		</tr>
+		<tr id="btnTr">
+			<td align="right" style="vertical-align: middle!important;">拣货单号:</td>
+			<td>
+				<input class="form-control" type="text">
+			</td>
+			<td align="left" colspan="2" style="vertical-align: middle!important;">
+				<input class="btn btn-success" type="button" name="finishedScanning" value="完成扫描" />
+			</td>
+		</tr>
+		<tr id="hideTr" hidden="true">
+			<td colspan="4" align="center">
+				<span id="showTip" style='font-size: 25px; font-weight: 600; color: red;'>这是一条撑开表格的文字</span>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

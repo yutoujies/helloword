@@ -1,0 +1,29 @@
+{
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "manifest_version": 2,
+  "name": "扫描称重",
+  "version": "1.0.0",
+
+  "description": "收货扫描及称重",
+  "icons":
+	{
+		"16": "res/img/icon.png",
+		"48": "res/img/icon.png",
+		"128": "res/img/icon.png"
+	},
+  "author": "HanChen",
+  "permissions": [
+    "https://ajax.googleapis.com/*",
+	"http://*/*",
+    "serial",
+    "usb",
+    {"usbDevices": [{
+      "vendorId": 483,
+      "productId": 5740}]
+    }
+  ]
+}
